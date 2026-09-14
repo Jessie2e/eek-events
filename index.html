@@ -932,6 +932,81 @@ img{display:block;max-width:100%}
   .forge-service-menu>summary{background:var(--forest);padding:14px 18px}
   .forge-guide-note{padding:13px 18px}
 }
+/* Footer polish + 2e Studio signature */
+
+.footer-right{
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:12px;
+}
+
+.footer-forge{
+  font-size:10px;
+  letter-spacing:.13em;
+  opacity:.72;
+}
+
+.studio-credit{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+  font-size:8px;
+  letter-spacing:.11em;
+  opacity:.48 !important;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:opacity .25s ease;
+}
+
+.studio-credit:hover{
+  opacity:1 !important;
+}
+
+.studio-name{
+  position:relative;
+  font-weight:700;
+  background:linear-gradient(
+    105deg,
+    var(--paper) 0%,
+    var(--paper) 35%,
+    var(--acid) 48%,
+    #fff 52%,
+    var(--paper) 65%,
+    var(--paper) 100%
+  );
+  background-size:240% 100%;
+  background-position:100% 0;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:studioGlow 6s ease-in-out infinite;
+}
+
+@keyframes studioGlow{
+  0%,72%,100%{background-position:100% 0;}
+  84%{background-position:0% 0;}
+}
+
+@media (max-width:720px){
+  .footer-right{
+    text-align:left;
+    align-items:flex-start;
+  }
+
+  .studio-credit{
+    white-space:normal;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .studio-name{
+    animation:none;
+    -webkit-text-fill-color:var(--paper);
+    background:none;
+  }
+}
 
 </style>
 </head>
@@ -1254,7 +1329,21 @@ img{display:block;max-width:100%}
     <div class="contact-inner reveal"><div class="kicker">Whatever you’re dreaming up</div><h2>Bring us the<br><em>wild idea.</em></h2><p>Tell EEK what you’re obsessed with, what you never want to see at your event, and the one detail you think might be “too much.” That’s usually where the good stuff starts.</p><div class="contact-actions"><a class="btn btn-primary" href="mailto:eek@eek.events?subject=I%20have%20a%20wild%20event%20idea">eek@eek.events ↗</a><a class="btn" href="https://www.instagram.com/eekevents" target="_blank" rel="noopener">@eekevents</a></div></div>
   </section>
 
-  <footer class="footer"><a class="logo" href="#top">EEK <small>events</small></a><div class="footer-center">Far-out weddings. Unforgettable events.</div><div class="footer-right"><a href="#forge">Roll for your event ↟</a></div></footer>
+  <footer class="footer"><a class="logo" href="#top">EEK <small>events</small></a><div class="footer-center">Far-out weddings. Unforgettable events.</div>
+    <div class="footer-right">
+  <a class="footer-forge" href="#forge">Forge your event ↟</a>
+
+  <a
+    class="studio-credit"
+    href="https://jessie2e.com"
+    target="_blank"
+    rel="noopener"
+  >
+    <span>Designed & built by</span>
+    <strong class="studio-name">2e Studio ↗</strong>
+  </a>
+</div>
+</footer>
 </div>
 
 <script>
