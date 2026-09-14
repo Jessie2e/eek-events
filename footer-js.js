@@ -42,6 +42,7 @@
       setTimeout(() => {
         proofImage.src = btn.dataset.proofSrc;
         proofImage.alt = btn.dataset.proofAlt || '';
+        proofImage.style.objectPosition = btn.dataset.proofPosition || 'center center';
         proofCaption.textContent = btn.dataset.proofLabel || '';
         proofImage.classList.remove('swapping');
       }, 140);
@@ -181,7 +182,7 @@
     if(selections < 4){
       $('#resultEyebrow').textContent = 'Your campaign readout';
       $('#resultTitle').textContent = selections ? 'Taking shape…' : 'Your Campaign';
-      $('#resultCopy').textContent = selections ? 'Good. Keep going — the Forge is narrowing the world and the kind of backup that fits it.' : 'Make four quick choices. EEK will turn them into a readable event brief and recommend the campaign that fits.';
+      $('#resultCopy').textContent = selections ? 'Good. Keep going — the Forge is narrowing the world and the kind of backup that fits it.' : 'Make four quick choices. EEK will recommend the service tier that fits, show its starting price, and turn your answers into a campaign brief.';
       $('#resultMatch').hidden = true;
       $('#resultActions').hidden = true;
       $('#forgeMatchNote').hidden = true;
@@ -209,6 +210,11 @@
     if(window.matchMedia('(max-width: 1000px)').matches){
       window.setTimeout(() => $('#forgeResult').scrollIntoView({behavior:'smooth',block:'start'}), 260);
     }
+  }
+
+  const forgeServiceMenu = $('#forgeServiceMenu');
+  if(forgeServiceMenu && window.matchMedia('(max-width: 720px)').matches){
+    forgeServiceMenu.removeAttribute('open');
   }
 
   forgeSteps.forEach(bindStepChoices);
