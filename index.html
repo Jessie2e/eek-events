@@ -309,6 +309,68 @@ img{display:block;max-width:100%}
 .case-art{position:absolute;right:5%;top:10%;width:42%;aspect-ratio:3/4;border:1px solid rgba(243,240,231,.35);border-radius:50% 50% 12px 12px;z-index:0;background:rgba(243,240,231,.07);display:grid;place-items:center;font-family:var(--display);font-size:clamp(60px,9vw,128px);font-style:italic;color:rgba(243,240,231,.82);transform:rotate(4deg)}
 .case-nav{display:flex;gap:10px;padding:0 clamp(24px,7vw,100px)}.case-nav button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(243,240,231,.35);background:transparent;color:var(--paper);cursor:pointer;transition:.2s}.case-nav button:hover{background:var(--paper);color:var(--ink)}
 
+
+/* Expanded client-requested campaign archive */
+.case-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.case-cta{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding-bottom:3px;border-bottom:1px solid rgba(243,240,231,.5);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--paper)}
+.case-cta:hover{color:var(--acid);border-color:var(--acid)}
+.archive-expansion{background:var(--paper);color:var(--ink);padding:clamp(78px,9vw,132px) clamp(18px,5vw,76px)}
+.archive-intro{display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:end;max-width:1320px;margin:0 auto 44px}
+.archive-intro h2{font-family:var(--display);font-weight:400;font-size:clamp(52px,6vw,92px);line-height:.9;letter-spacing:-.04em;margin:0}
+.archive-intro p{max-width:540px;margin:0;line-height:1.6;color:#515047}
+.archive-stack{max-width:1320px;margin:auto;display:grid;gap:18px}
+.archive-story{border:1px solid rgba(18,19,15,.16);border-radius:30px;padding:clamp(18px,2.5vw,32px);background:#ebe7dc;overflow:hidden}
+.archive-story-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:22px}
+.archive-story-head h3{font-family:var(--display);font-size:clamp(36px,4vw,58px);font-weight:400;line-height:.95;margin:0}
+.archive-story-head p{max-width:580px;margin:0;font-size:13px;line-height:1.55;color:#55544c}
+.archive-story-head a{display:inline-flex;margin-top:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;border-bottom:1px solid currentColor;padding-bottom:3px}
+.archive-gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:180px;gap:10px}
+.archive-shot{margin:0;border-radius:18px;overflow:hidden;background:#ccc;position:relative}
+.archive-shot img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.archive-shot:hover img{transform:scale(1.025)}
+.archive-shot.wide{grid-column:span 7;grid-row:span 2}
+.archive-shot.tall{grid-column:span 5;grid-row:span 2}
+.archive-shot.third{grid-column:span 4;grid-row:span 2}
+.archive-shot.half{grid-column:span 6;grid-row:span 2}
+.archive-story.gs .archive-shot.hero-shot{grid-column:span 7;grid-row:span 3}
+.archive-story.gs .archive-shot.small-shot{grid-column:span 5;grid-row:span 1}
+.archive-story.gs .archive-shot.small-pair{grid-column:span 5;grid-row:span 2}
+.archive-story.gs .archive-shot.small-pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:transparent;overflow:visible}
+.archive-story.gs .archive-shot.small-pair-grid figure{margin:0;border-radius:18px;overflow:hidden;min-height:100%}
+.archive-story.gs .archive-shot.small-pair-grid img{width:100%;height:100%;object-fit:cover}
+
+/* Full biography requested by EEK — additive to the short About section above */
+.about-deep{background:var(--oxblood);color:var(--paper);padding:clamp(88px,10vw,150px) clamp(24px,7vw,100px)}
+.about-deep-grid{max-width:1320px;margin:auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(42px,7vw,100px);align-items:start}
+.about-deep-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:360px 290px;gap:12px;position:sticky;top:110px}
+.about-deep-photos figure{margin:0;border-radius:24px;overflow:hidden;border:1px solid rgba(243,240,231,.2);background:#251a1b}
+.about-deep-photos figure:first-child{grid-row:span 2}
+.about-deep-photos img{width:100%;height:100%;object-fit:cover;filter:saturate(.94)}
+.about-deep-photos figure:nth-child(2) img{object-position:center 42%}
+.about-deep-copy .kicker{color:var(--acid)}
+.about-deep-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(58px,7vw,104px);line-height:.86;letter-spacing:-.045em;margin:0 0 30px}
+.about-deep-copy .credential{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--acid);margin:0 0 26px}
+.about-deep-copy p{font-size:clamp(16px,1.35vw,19px);line-height:1.68;color:rgba(243,240,231,.84);margin:0 0 22px}
+.about-deep-copy p:last-child{margin-bottom:0}
+
+@media (max-width:1000px){
+  .archive-intro,.about-deep-grid{grid-template-columns:1fr}
+  .about-deep-photos{position:static;max-width:760px}
+}
+@media (max-width:720px){
+  .archive-expansion{padding-left:14px;padding-right:14px}
+  .archive-story{border-radius:24px;padding:14px}
+  .archive-story-head{display:block}
+  .archive-story-head p{margin-top:12px}
+  .archive-gallery{grid-template-columns:1fr;grid-auto-rows:260px}
+  .archive-shot.wide,.archive-shot.tall,.archive-shot.third,.archive-shot.half,
+  .archive-story.gs .archive-shot.hero-shot,.archive-story.gs .archive-shot.small-shot,.archive-story.gs .archive-shot.small-pair{grid-column:auto;grid-row:auto}
+  .archive-story.gs .archive-shot.small-pair-grid{grid-template-columns:1fr 1fr;min-height:260px}
+  .about-deep{padding-left:20px;padding-right:20px}
+  .about-deep-photos{grid-template-columns:1fr 1fr;grid-template-rows:330px 210px}
+  .about-deep-photos figure:first-child{grid-column:span 2;grid-row:auto}
+}
+
 .services{background:var(--sage);padding:clamp(88px,10vw,150px) clamp(24px,6vw,90px);position:relative}.services:before{content:"";position:absolute;right:-130px;top:40px;width:420px;height:420px;border:1px solid rgba(18,19,15,.16);border-radius:50%;box-shadow:0 0 0 28px rgba(18,19,15,.03),0 0 0 64px rgba(18,19,15,.02)}
 .services-intro{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:end;margin-bottom:52px}.services h2{font-family:var(--display);font-weight:400;font-size:clamp(60px,7.5vw,116px);line-height:.85;letter-spacing:-.045em;margin:0}.services-intro p{margin:0 0 8px;line-height:1.6;max-width:520px}
 .quest-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;position:relative;z-index:2}.quest{grid-column:span 4;background:rgba(243,240,231,.8);border:1px solid rgba(18,19,15,.18);border-radius:24px;padding:24px;min-height:330px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s ease}.quest:hover{transform:translateY(-6px) rotate(-.35deg);background:var(--paper);box-shadow:0 20px 50px rgba(18,19,15,.12)}.quest:nth-child(4),.quest:nth-child(5){grid-column:span 6}
@@ -673,6 +735,43 @@ img{display:block;max-width:100%}
 }
 
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+
+/* 2026-09 homepage tightening pass */
+.proof-stage{background:var(--paper);padding:clamp(74px,8vw,116px) clamp(20px,6vw,90px);display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:clamp(34px,7vw,100px);align-items:center}
+.proof-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(54px,6.4vw,96px);line-height:.88;letter-spacing:-.045em;margin:0 0 24px}.proof-copy>p{max-width:520px;line-height:1.6;color:#515047;margin:0 0 30px}
+.proof-picks{border-top:1px solid rgba(18,19,15,.18)}.proof-pick{width:100%;display:flex;align-items:center;gap:14px;border:0;border-bottom:1px solid rgba(18,19,15,.18);background:transparent;text-align:left;padding:15px 2px;cursor:pointer;font-size:13px;transition:.2s ease}.proof-pick span{font-family:var(--display);font-size:20px;opacity:.5}.proof-pick:hover,.proof-pick.active{padding-left:10px;color:var(--oxblood)}.proof-pick.active{font-weight:700}.proof-pick.active:after{content:"↗";margin-left:auto}
+.proof-image{margin:0;min-height:560px;height:min(66vw,720px);border-radius:34px;overflow:hidden;position:relative;background:#d7d2c6;border:1px solid rgba(18,19,15,.12)}.proof-image img{width:100%;height:100%;object-fit:cover;transition:opacity .18s ease,transform .7s ease;filter:saturate(.94)}.proof-image img.swapping{opacity:.18}.proof-image:hover img{transform:scale(1.015)}.proof-image figcaption{position:absolute;left:20px;bottom:20px;background:rgba(243,240,231,.94);padding:10px 13px;border-radius:999px;font-size:10px;text-transform:uppercase;letter-spacing:.13em;backdrop-filter:blur(8px)}
+.case-archive-link{display:inline-flex;align-items:center;margin-left:8px;min-height:48px;padding:0 4px;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:rgba(243,240,231,.7);border-bottom:1px solid rgba(243,240,231,.28)}.case-archive-link:hover{color:var(--acid);border-color:var(--acid)}
+.archive-door{background:var(--sage);padding:clamp(54px,6vw,82px) clamp(24px,6vw,88px);display:grid;grid-template-columns:minmax(300px,.62fr) minmax(0,1.38fr);gap:clamp(38px,5vw,76px);align-items:center;overflow:hidden}.archive-door-copy{max-width:470px}.archive-door-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(54px,5.6vw,88px);line-height:.88;letter-spacing:-.045em;margin:0 0 18px}.archive-door-copy p{max-width:440px;line-height:1.58;margin:0 0 25px}.archive-btn{border-color:var(--ink);color:var(--ink)}
+.archive-selector{width:100%;max-width:790px;justify-self:end}.archive-stage{position:relative;margin:0;aspect-ratio:16/10;max-height:520px;border-radius:28px;overflow:hidden;background:#bbb;border:1px solid rgba(18,19,15,.14);box-shadow:0 24px 58px rgba(18,19,15,.12)}.archive-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,19,15,.5),transparent 38%);pointer-events:none}.archive-stage img{width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;transition:opacity .22s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.archive-stage img.swapping{opacity:.3;transform:scale(1.015)}.archive-stage figcaption{position:absolute;z-index:2;left:22px;bottom:19px;color:var(--paper);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;max-width:76%;line-height:1.35}.archive-thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.archive-thumb{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;min-width:0;border-radius:12px}.archive-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block;border:1px solid rgba(18,19,15,.14);filter:saturate(.82);opacity:.62;transition:opacity .2s ease,filter .2s ease,transform .2s ease,box-shadow .2s ease}.archive-thumb:hover img,.archive-thumb.active img{opacity:1;filter:saturate(1);transform:translateY(-2px);box-shadow:0 8px 20px rgba(18,19,15,.11)}.archive-thumb.active img{outline:2px solid var(--ink);outline-offset:2px}.archive-thumb:focus-visible{outline:2px solid var(--oxblood);outline-offset:4px}
+.reviews-strip{background:var(--ink);color:var(--paper);padding:clamp(48px,5vw,70px) clamp(22px,6vw,90px);display:grid;grid-template-columns:.55fr 1.45fr;gap:clamp(28px,5vw,70px);align-items:center}.reviews-heading .kicker{color:var(--acid);margin-bottom:14px}.reviews-heading h2{font-family:var(--display);font-size:clamp(42px,4.8vw,70px);font-weight:400;line-height:.9;letter-spacing:-.04em;margin:0 0 12px}.reviews-heading small{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:rgba(243,240,231,.42)}.reviews-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.reviews-rail blockquote{margin:0;border:1px solid rgba(243,240,231,.18);border-radius:22px;padding:22px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(243,240,231,.04)}.reviews-rail p{font-family:var(--display);font-size:clamp(19px,1.8vw,27px);line-height:1.12;margin:0}.reviews-rail footer{margin-top:22px;font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:var(--acid)}
+.forge-services{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(18,19,15,.18);background:#e5e0d4}.forge-services::-webkit-scrollbar{display:none}.forge-services a{min-width:170px;padding:16px 18px;border-right:1px solid rgba(18,19,15,.14);transition:.2s ease}.forge-services a:hover{background:var(--acid)}.forge-services span,.forge-services em{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-style:normal;opacity:.58}.forge-services strong{display:block;font-family:var(--display);font-size:21px;font-weight:400;line-height:1;margin:7px 0}.forge-services em{opacity:.85;font-weight:700}
+.about-combined{background:var(--paper);padding:clamp(82px,9vw,132px) clamp(24px,7vw,100px);display:grid;grid-template-columns:.88fr 1.12fr;gap:clamp(44px,8vw,120px);align-items:start}.about-portrait{position:relative;min-height:680px;max-width:620px}.about-portrait figure{margin:0;position:absolute;overflow:hidden;border-radius:26px;background:#bbb;border:1px solid rgba(18,19,15,.12);box-shadow:0 20px 48px rgba(18,19,15,.12)}.about-portrait img{width:100%;height:100%;object-fit:cover}.about-main{inset:0 18% 12% 0;border-radius:240px 240px 30px 30px!important}.about-work{width:42%;height:36%;right:0;top:7%;transform:rotate(4deg)}.about-life{width:45%;height:32%;right:1%;bottom:0;transform:rotate(-3deg)}
+.about-combined-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(58px,7vw,104px);line-height:.86;letter-spacing:-.045em;margin:0 0 28px}.about-lede{font-size:clamp(20px,2vw,28px)!important;line-height:1.35!important;letter-spacing:-.015em}.about-combined-copy>p{font-size:16px;line-height:1.65;max-width:760px}.compact-facts{margin-top:30px}.about-lore{margin-top:28px;border-top:1px solid rgba(18,19,15,.24);border-bottom:1px solid rgba(18,19,15,.24)}.about-lore summary{list-style:none;cursor:pointer;padding:18px 2px;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:700}.about-lore summary::-webkit-details-marker{display:none}.about-lore summary span{font-family:var(--display);font-size:26px;font-weight:400;transition:.25s}.about-lore[open] summary span{transform:rotate(45deg)}.about-lore-body{padding:0 0 26px;max-width:780px}.about-lore-body p{font-size:15px;line-height:1.7;color:#44473f}.about-lore-body .credential{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--oxblood);font-weight:700}
+#services{scroll-margin-top:28px}
+
+/* Dedicated archive page */
+.archive-page{background:var(--paper);min-height:100vh}.archive-page .nav{position:relative;top:0;background:var(--ink);height:86px}.archive-page .topbar{position:relative}.archive-hero{background:var(--oxblood);color:var(--paper);padding:clamp(90px,10vw,150px) clamp(24px,7vw,100px) clamp(64px,8vw,110px)}.archive-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(72px,10vw,150px);line-height:.76;letter-spacing:-.055em;margin:0;max-width:1000px}.archive-hero h1 em{color:var(--acid);font-weight:400}.archive-hero p{font-size:clamp(17px,1.7vw,23px);max-width:700px;line-height:1.5;color:rgba(243,240,231,.8);margin:30px 0 0}.archive-page-grid{padding:clamp(70px,8vw,120px) clamp(20px,6vw,90px);display:grid;gap:20px}.archive-event{border:1px solid rgba(18,19,15,.16);border-radius:30px;padding:clamp(18px,2.6vw,34px);background:#ebe7dc}.archive-event-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:30px;align-items:end;margin-bottom:22px}.archive-event-head h2{font-family:var(--display);font-size:clamp(44px,5vw,76px);font-weight:400;line-height:.9;margin:0}.archive-event-head p{margin:0;line-height:1.6;color:#55544c;max-width:700px}.archive-event-gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:190px;gap:10px}.archive-event-gallery figure{margin:0;border-radius:18px;overflow:hidden;background:#ccc}.archive-event-gallery img{width:100%;height:100%;object-fit:cover}.archive-event-gallery .half{grid-column:span 6;grid-row:span 2}.archive-event-gallery .third{grid-column:span 4;grid-row:span 2}.archive-event-gallery .hero-shot{grid-column:span 7;grid-row:span 3}.archive-event-gallery .side-shot{grid-column:span 5;grid-row:span 3}.archive-event-link{display:inline-flex;margin-top:14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;border-bottom:1px solid currentColor;padding-bottom:3px}
+
+@media(max-width:1000px){.proof-stage,.archive-door,.reviews-strip,.about-combined{grid-template-columns:1fr}.proof-image{height:68vw;min-height:480px}.archive-door{gap:34px}.archive-door-copy{max-width:680px}.archive-door-copy p{max-width:620px}.archive-selector{justify-self:stretch;max-width:none}.archive-stage{aspect-ratio:16/10;max-height:560px}.archive-stage img{object-position:center 58%}.reviews-rail{grid-template-columns:repeat(3,minmax(260px,1fr));overflow-x:auto}.about-portrait{min-height:650px}.archive-event-head{grid-template-columns:1fr}}
+@media(max-width:720px){.proof-stage{padding-left:20px;padding-right:20px}.proof-image{height:115vw;min-height:420px;border-radius:24px}.proof-pick{padding:14px 0}.archive-door{padding:48px 20px 54px;gap:28px}.archive-door-copy h2{font-size:clamp(50px,14vw,72px)}.archive-door-copy p{font-size:15px}.archive-selector{max-width:none;width:100%}.archive-stage{aspect-ratio:4/3;max-height:none;border-radius:20px}.archive-stage img{object-position:center 58%}.archive-stage figcaption{left:16px;bottom:14px;font-size:8px;max-width:88%}.archive-thumbs{gap:7px;margin-top:8px}.archive-thumb img{aspect-ratio:4/3;border-radius:9px}.reviews-strip{padding-left:18px;padding-right:18px}.reviews-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.reviews-rail blockquote{min-width:78vw;scroll-snap-align:start}.forge-services{grid-template-columns:repeat(6,170px)}.about-combined{padding-left:20px;padding-right:20px}.about-portrait{min-height:520px}.about-main{inset:0 14% 14% 0}.about-work{width:44%;height:34%}.about-life{width:48%;height:30%}.compact-facts{grid-template-columns:1fr}.archive-event-gallery{grid-template-columns:1fr;grid-auto-rows:270px}.archive-event-gallery .half,.archive-event-gallery .third,.archive-event-gallery .hero-shot,.archive-event-gallery .side-shot{grid-column:auto;grid-row:auto}.archive-hero{padding-left:22px;padding-right:22px}.archive-page-grid{padding-left:14px;padding-right:14px}.archive-event{padding:14px;border-radius:24px}}
+
+
+/* Guided Vibe Forge v7 */
+.forge-services{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(18,19,15,.18);background:#e5e0d4}.forge-services::-webkit-scrollbar{display:none}
+.forge-service-card{min-width:170px;padding:16px 18px;border-right:1px solid rgba(18,19,15,.14);transition:background .25s ease,transform .25s ease;position:relative}.forge-service-card span,.forge-service-card em{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-style:normal;opacity:.58}.forge-service-card strong{display:block;font-family:var(--display);font-size:21px;font-weight:400;line-height:1;margin:7px 0}.forge-service-card em{opacity:.85;font-weight:700}.forge-service-card.recommended{background:var(--acid);transform:translateY(-2px)}.forge-service-card.recommended:after{content:"BEST FIT";position:absolute;right:10px;top:10px;font-size:7px;letter-spacing:.13em;font-weight:800}
+.forge-guide-note{padding:13px clamp(18px,3vw,36px);border-bottom:1px solid rgba(18,19,15,.18);background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:.02em}.forge-guide-note strong{color:var(--acid)}.forge-guide-note span{display:inline-block;margin-left:6px}
+.forge-body{grid-template-columns:.92fr 1.08fr;min-height:520px}.guided-forge{display:flex;flex-direction:column;min-height:520px;padding:clamp(28px,4vw,52px)}
+.forge-progress{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin-bottom:46px;font-size:9px;text-transform:uppercase;letter-spacing:.13em;font-weight:700}.forge-progress-track{height:2px;background:rgba(18,19,15,.15);overflow:hidden}.forge-progress-track i{display:block;height:100%;width:25%;background:var(--violet);transition:width .3s ease}.forge-progress-note{opacity:.48;text-align:right}
+.forge-step{display:none;animation:forgeStepIn .32s ease both}.forge-step.active{display:block}.step-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--violet);font-weight:800;margin-bottom:11px}.forge-step h3{font-family:var(--display);font-weight:400;font-size:clamp(38px,4vw,56px);line-height:.95;letter-spacing:-.025em;margin:0 0 12px}.step-copy{font-size:13px;line-height:1.55;color:#5b5b53;max-width:560px;margin:0 0 24px}.forge-choice-grid{gap:10px}.forge-choice-grid .chip{font-size:13px;padding:12px 15px;background:rgba(255,255,255,.72)}.forge-choice-grid .chip:hover,.forge-choice-grid .chip.active{background:var(--ink);color:var(--paper)}
+.forge-nav{margin-top:auto;padding-top:34px;display:flex;align-items:center;justify-content:space-between;gap:18px}.forge-back{border:0;background:transparent;padding:8px 0;font:700 10px var(--sans);text-transform:uppercase;letter-spacing:.13em;cursor:pointer;border-bottom:1px solid currentColor}.forge-back:disabled{opacity:.2;cursor:default}.forge-nav span{font-size:9px;text-transform:uppercase;letter-spacing:.12em;opacity:.44}.forge-match-note{margin-top:22px;padding:12px 14px;border:1px solid rgba(18,19,15,.18);border-radius:12px;font-size:11px;background:var(--acid)}
+.campaign-readout{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(243,240,231,.18);border-left:1px solid rgba(243,240,231,.18);margin-top:28px}.campaign-readout>div{padding:14px;border-right:1px solid rgba(243,240,231,.18);border-bottom:1px solid rgba(243,240,231,.18);min-height:72px}.campaign-readout span{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:var(--acid);margin-bottom:7px}.campaign-readout strong{font-size:12px;line-height:1.35;font-weight:600;color:var(--paper)}
+.result-match{border-top:1px solid rgba(243,240,231,.2);margin-top:28px;padding-top:24px}.match-label{font-size:8px;text-transform:uppercase;letter-spacing:.16em;color:var(--acid);font-weight:800}.match-line{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:8px 0 9px}.match-line strong{font-family:var(--display);font-size:clamp(28px,3vw,42px);font-weight:400;line-height:1}.match-line em{font-style:normal;font-size:11px;font-weight:800;white-space:nowrap;color:var(--acid)}.result-match p{font-size:12px;line-height:1.55;color:rgba(243,240,231,.72);margin:0;max-width:540px}.is-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@keyframes forgeStepIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.forge-body{grid-template-columns:1fr}.guided-forge{min-height:470px}.forge-services{scroll-snap-type:x mandatory}.forge-service-card{scroll-snap-align:start}.forge-result{min-height:520px}}
+@media(max-width:720px){.forge-head p{font-size:14px}.forge-guide-note{font-size:10px;line-height:1.5}.forge-services{grid-template-columns:repeat(6,158px)}.forge-service-card{min-width:158px;padding:14px}.forge-service-card strong{font-size:19px}.guided-forge{min-height:430px;padding:28px 20px}.forge-progress{grid-template-columns:auto 1fr;margin-bottom:32px}.forge-progress-note{display:none}.forge-step h3{font-size:clamp(38px,12vw,50px)}.forge-choice-grid{display:grid;grid-template-columns:1fr 1fr}.forge-choice-grid .chip{width:100%;text-align:left;font-size:12px;padding:12px}.forge-nav{padding-top:24px}.campaign-readout{grid-template-columns:1fr}.campaign-readout>div{min-height:58px}.match-line{display:block}.match-line em{display:block;margin-top:8px}}
+
 </style>
 </head>
 <body>
@@ -699,7 +798,7 @@ img{display:block;max-width:100%}
       <p class="hero-sub reveal">For creative, unabashedly geeky humans, teams, and communities who want an event that feels like a world of its own — not a template with your name pasted on top.</p>
       <div class="hero-actions reveal">
         <a class="btn btn-primary" href="#forge">Forge your event vibe ✦</a>
-        <a class="btn btn-ghost" href="#work">Enter the archives ↓</a>
+        <a class="btn btn-ghost" href="archive.html">Enter the archives ↗</a>
       </div>
     </div>
     <div class="hero-visual" aria-label="A joyful EEK Events ceremony moment">
@@ -723,93 +822,254 @@ img{display:block;max-width:100%}
     </div>
   </section>
 
-  <section class="collage" id="work">
-    <div class="section-head reveal"><h2>Proof that<br>“too weird” works.</h2><p>EEK events can be cinematic, cozy, colorful, medieval, nerdy, elegant, intimate — or all of those before cocktail hour.</p></div>
-    <div class="gallery-grid">
-      <figure class="photo one reveal"><img src="assets/knight-wedding.jpg" alt="Wedding guest in knight armor with a groom"><figcaption class="photo-label">Wear the armor</figcaption></figure>
-      <figure class="photo two reveal"><img src="assets/renaissance-wedding.jpg" alt="Wedding scene with renaissance festival styling"><figcaption class="photo-label">Make the world real</figcaption></figure>
-      <figure class="photo reveal"><img src="assets/cake-topper.jpg" alt="A playful custom wedding cake topper"><figcaption class="photo-label">Put lore on the cake</figcaption></figure>
-      <figure class="photo reveal"><img src="assets/glow-dress.jpg" alt="A glowing illuminated wedding dress moment"><figcaption class="photo-label">Commit to the bit</figcaption></figure>
+  <section class="proof-stage" id="work" aria-labelledby="proof-title">
+    <div class="proof-copy reveal">
+      <div class="kicker">Proof, not promises</div>
+      <h2 id="proof-title">Proof that<br>“too weird” works.</h2>
+      <p>EEK events can be cinematic, cozy, colorful, medieval, nerdy, elegant, intimate — or all of those before cocktail hour.</p>
+      <div class="proof-picks" role="list" aria-label="Choose an event detail to preview">
+        <button class="proof-pick active" type="button" data-proof-src="assets/ConnorEmily1.jpeg" data-proof-alt="Emily and Connor wedding detail" data-proof-label="Make the world real"><span>01</span> Make the world real</button>
+        <button class="proof-pick" type="button" data-proof-src="assets/knight-wedding.jpg" data-proof-alt="Wedding guest in knight armor with a groom" data-proof-label="Wear the armor"><span>02</span> Wear the armor</button>
+        <button class="proof-pick" type="button" data-proof-src="assets/cake-topper.jpg" data-proof-alt="A playful custom wedding cake topper" data-proof-label="Put lore on the cake"><span>03</span> Put lore on the cake</button>
+        <button class="proof-pick" type="button" data-proof-src="assets/glow-dress.jpg" data-proof-alt="A glowing illuminated wedding dress moment" data-proof-label="Commit to the bit"><span>04</span> Commit to the bit</button>
+      </div>
     </div>
+    <figure class="proof-image reveal">
+      <img id="proofImage" src="assets/ConnorEmily1.jpeg" alt="Emily and Connor wedding detail">
+      <figcaption id="proofCaption">Make the world real</figcaption>
+    </figure>
   </section>
 
   <section class="cases" aria-labelledby="cases-title">
-    <div class="section-head reveal"><h2 id="cases-title">Featured<br>campaigns.</h2><p>Weddings are EEK’s home turf — but world-building isn’t limited to walking down an aisle. These featured wedding stories lead the archive, with corporate, Pride, community, and other event work ready to join them.</p></div>
+    <div class="section-head reveal"><h2 id="cases-title">Featured<br>campaigns.</h2><p>A few worlds EEK has helped bring to life — weddings, nonprofit programming, Pride and beyond. The deeper cuts now live in the archive.</p></div>
     <div class="case-track" id="caseTrack">
-<article class="case">
-  <div class="case-bg">
-    <img src="assets/CaroNoah.JPG" alt="Caroline and Noah wedding">
-  </div>
-  <div class="case-no">Case file 01</div>
-  <div class="case-copy">
-    <h3>Caroline + Noah</h3>
-    <p>A storybook celebration for two people who wanted the day to feel unmistakably theirs.</p>
-    <div class="case-tag">↳ Wedding</div>
-  </div>
-</article>
+      <article class="case">
+        <div class="case-bg"><img src="assets/ConnorEmily2.jpeg" alt="Emily and Connor celebrating at their wedding"></div>
+        <div class="case-no">Case file 01</div>
+        <div class="case-copy">
+          <h3>Emily + Connor</h3>
+          <p>A celebration with theatrical flourishes, highly personal details and plenty of main-character energy.</p>
+          <div class="case-tag">↳ Wedding</div>
+        </div>
+      </article>
 
-<article class="case">
-  <div class="case-bg">
-    <img src="assets/MikeSarah1.jpg" alt="Mike and Sara wedding">
-  </div>
-  <div class="case-no">Case file 02</div>
-  <div class="case-copy">
-    <h3>Mike + Sara</h3>
-    <p>Color, character, layered details and a room full of people completely in on the story.</p>
-    <div class="case-tag">↳ Wedding</div>
-  </div>
-</article>
+      <article class="case">
+        <div class="case-bg"><img src="assets/girlscout1.jpeg" alt="Guests at a Girl Scout Network event"></div>
+        <div class="case-no">Case file 02</div>
+        <div class="case-copy">
+          <h3>The Girl Scout Network</h3>
+          <p>Community-building events and the Campfire Chat series, produced to engage alum audiences at scale.</p>
+          <div class="case-tag">↳ Nonprofit + Community</div>
+          <a class="case-cta" href="https://www.youtube.com/playlist?list=PLZaWZO965rJ3zGUOIqOQLQxSmE9pFOjYs" target="_blank" rel="noopener">Watch the Campfire Chats ↗</a>
+        </div>
+      </article>
 
-<article class="case">
-  <div class="case-bg">
-    <img src="assets/CorpPride.jpg" alt="Corporate Pride event produced by EEK Events">
-  </div>
-  <div class="case-no">Case file 03</div>
-  <div class="case-copy">
-    <h3>Corporate Pride</h3>
-    <p>A Pride celebration built with the same intentional design, logistics and unmistakable EEK energy.</p>
-    <div class="case-tag">↳ Corporate + Pride</div>
-  </div>
-</article>
+      <article class="case">
+        <div class="case-bg"><img src="assets/sarastefan1.jpeg" alt="Sara and Stefan celebrating at their wedding with a knight in armor"></div>
+        <div class="case-no">Case file 03</div>
+        <div class="case-copy">
+          <h3>Sara + Stefan</h3>
+          <p>Bold color, playful medieval details and a celebration that fully committed to its own world.</p>
+          <div class="case-tag">↳ Wedding</div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-bg"><img src="assets/CorpPride.jpg" alt="Corporate Pride event produced by EEK Events"></div>
+        <div class="case-no">Case file 04</div>
+        <div class="case-copy">
+          <h3>Corporate Pride</h3>
+          <p>A Pride celebration built with the same intentional design, logistics and unmistakable EEK energy.</p>
+          <div class="case-tag">↳ Corporate + Pride</div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-bg"><img src="assets/MikeSarah1.jpg" alt="Sarah and Mike at their wedding"></div>
+        <div class="case-no">Case file 05</div>
+        <div class="case-copy">
+          <h3>Sarah + Mike</h3>
+          <p>Color, character, layered details and a room full of people completely in on the story.</p>
+          <div class="case-tag">↳ Wedding</div>
+        </div>
+      </article>
     </div>
-    <div class="case-nav"><button id="casePrev" aria-label="Previous event">←</button><button id="caseNext" aria-label="Next event">→</button></div>
+    <div class="case-nav"><button id="casePrev" aria-label="Previous event">←</button><button id="caseNext" aria-label="Next event">→</button><a class="case-archive-link" href="archive.html">Explore the full archive ↗</a></div>
   </section>
 
-  <section class="services" id="services">
-    <div class="services-intro reveal"><h2>Choose your<br>campaign.</h2><p>Weddings are the main campaign, with planning, coordination, officiating, and outfitting packages built for couples who want something unmistakably theirs. Planning something else? EEK builds custom event campaigns, too.</p></div>
-    <div class="quest-grid">
-      <article class="quest reveal"><div><div class="quest-top"><div class="quest-icon">✦</div><div class="quest-price">$250</div></div><h3>Cleric Castleton</h3><p>Officiating for a ceremony built around your actual story, your relationship and the things you actually care about.</p></div><a href="#contact">Summon the cleric</a></article>
-      <article class="quest reveal"><div><div class="quest-top"><div class="quest-icon">1</div><div class="quest-price">$3,000</div></div><h3>The One-Shot</h3><p>Coordination for the couple who did the planning and wants an expert to take the clipboard for the final stretch.</p></div><a href="#contact">Hand off the quest log</a></article>
-      <article class="quest reveal"><div><div class="quest-top"><div class="quest-icon">2</div><div class="quest-price">$5,000</div></div><h3>Co-Op Campaign</h3><p>Partial planning for couples who want to stay in the adventure, with an expert filling the gaps that feel overwhelming.</p></div><a href="#contact">Join forces</a></article>
-      <article class="quest reveal"><div><div class="quest-top"><div class="quest-icon">∞</div><div class="quest-price">$8,000</div></div><h3>The Wedding Campaign</h3><p>Full planning from venue and design through vendors, budget, timeline, execution and getting everybody home afterward.</p></div><a href="#contact">Build the whole world</a></article>
-      <article class="quest reveal"><div><div class="quest-top"><div class="quest-icon">✂</div><div class="quest-price">Variable</div></div><h3>Wedding Outfitting</h3><p>Costume-design expertise for sourcing, tailoring, bespoke looks and making the whole visual story work together.</p></div><a href="#contact">Create the look</a></article>
-      <article class="quest custom-event reveal"><div><div class="quest-top"><div class="quest-icon">★</div><div class="quest-price">Custom Quote</div></div><h3>Custom Event Campaigns</h3><p>Corporate gatherings. Pride celebrations. Community events. Milestones. Parties. Launches. Something you invented that does not fit neatly into a dropdown menu. EEK brings the same world-building, logistics, vendor wrangling, design thinking, and detail obsession to events that do not involve a ceremony aisle.</p></div><a href="#contact">Pitch us your event</a></article>
+
+  <section class="archive-door" aria-labelledby="archive-door-title">
+    <div class="archive-door-copy reveal">
+      <div class="kicker">Want receipts?</div>
+      <h2 id="archive-door-title">Enter the archives.</h2>
+      <p>More weddings, more strange little details, more community work, more evidence that the idea you almost edited out is probably the good part.</p>
+      <a class="btn archive-btn" href="archive.html">Explore selected work ↗</a>
+    </div>
+    <div class="archive-selector reveal">
+      <figure class="archive-stage">
+        <img id="archivePreviewImage" src="assets/glow-dress.jpg" alt="Bride dancing in a glowing illuminated dress">
+        <figcaption id="archivePreviewCaption">Glow-dress dance floor magic</figcaption>
+      </figure>
+      <div class="archive-thumbs" role="group" aria-label="Preview selected archive images">
+        <button class="archive-thumb active" type="button" data-archive-src="assets/glow-dress.jpg" data-archive-alt="Bride dancing in a glowing illuminated dress" data-archive-label="Glow-dress dance floor magic" aria-label="Show glow-dress dance floor photo">
+          <img src="assets/glow-dress.jpg" alt="">
+        </button>
+        <button class="archive-thumb" type="button" data-archive-src="assets/sarastefan2.jpeg" data-archive-alt="Wedding celebration detail from Sara and Stefan's event" data-archive-label="A celebration that committed to the bit" aria-label="Show Sara and Stefan wedding photo">
+          <img src="assets/sarastefan2.jpeg" alt="">
+        </button>
+        <button class="archive-thumb" type="button" data-archive-src="assets/d20-rings.jpg" data-archive-alt="Wedding rings posed with twenty-sided dice" data-archive-label="The tiny details tell the whole story" aria-label="Show wedding rings and dice photo">
+          <img src="assets/d20-rings.jpg" alt="">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-strip" aria-labelledby="reviews-title">
+    <div class="reviews-heading reveal">
+      <div class="kicker">Dispatches from the party</div>
+      <h2 id="reviews-title">People had<br>a good time.</h2>
+      <small>Sample review copy — replace before launch.</small>
+    </div>
+    <div class="reviews-rail reveal">
+      <blockquote><p>“EEK somehow made every wildly specific thing we asked for feel intentional instead of impossible.”</p><footer>— Sample wedding client</footer></blockquote>
+      <blockquote><p>“The room felt completely like us, and we actually got to enjoy it instead of managing it.”</p><footer>— Sample wedding client</footer></blockquote>
+      <blockquote><p>“Creative enough to understand the idea, organized enough to make the idea happen.”</p><footer>— Sample event partner</footer></blockquote>
     </div>
   </section>
 
   <section class="forge" id="forge">
     <div class="forge-shell reveal">
-      <div class="forge-head"><div><div class="kicker">Lead-capture experience disguised as something fun</div><h2>The Event<br>Vibe Forge.</h2><p>A tiny interactive concept session that helps couples, teams, and communities articulate what they want before they ever fill out a boring contact form.</p></div><div class="forge-badge">takes ~45 seconds</div></div>
-      <div class="forge-body">
-        <div class="forge-form">
-          <div class="question" data-key="eventType"><label class="title">1. What are we building?</label><div class="choices"><button class="chip">Wedding</button><button class="chip">Corporate + Brand</button><button class="chip">Pride + Community</button><button class="chip">Party + Milestone</button><button class="chip">Something Else Entirely</button></div></div>
-          <div class="question" data-key="setting"><label class="title">2. Pick your world.</label><div class="choices"><button class="chip">Castle + candlelight</button><button class="chip">Forest + folklore</button><button class="chip">Industrial + strange</button><button class="chip">Backyard + intimate</button><button class="chip">Cosmic + maximalist</button></div></div>
-          <div class="question" data-key="energy"><label class="title">3. What’s the energy?</label><div class="choices"><button class="chip">Cinematic</button><button class="chip">Cozy chaos</button><button class="chip">Dark romance</button><button class="chip">Joyfully loud</button><button class="chip">Low-key weird</button></div></div>
-          <div class="question" data-key="plot"><label class="title">4. Add a plot twist.</label><div class="choices multi"><button class="chip">Sword moment</button><button class="chip">Costume change</button><button class="chip">Immersive tables</button><button class="chip">Traditions remixed</button><button class="chip">Surprise performance</button><button class="chip">Accessibility-first</button></div></div>
-          <div class="question" data-key="stage"><label class="title">5. Where are you in the quest?</label><div class="choices"><button class="chip">Blank page</button><button class="chip">Halfway planned</button><button class="chip">Final stretch</button><button class="chip">Need a ceremony/officiant</button><button class="chip">Need the look</button></div></div>
-          <div class="question"><label class="title" for="wildIdea">6. What’s the idea you’re almost afraid to say out loud?</label><input class="textline" id="wildIdea" placeholder="A falcon delivers the rings? A surprise performance? Tell us." /></div>
+      <div class="forge-head">
+        <div>
+          <div class="kicker">Four choices. One campaign.</div>
+          <h2>The Event<br>Vibe Forge.</h2>
+          <p>Build your event in about 45 seconds. EEK will turn the vibe into a campaign readout — and match you to the level of support that actually fits.</p>
         </div>
-        <aside class="forge-result">
-          <div><div class="result-eyebrow">Your campaign readout</div><h3 class="result-title" id="resultTitle">Your Campaign</h3><p class="result-copy" id="resultCopy">Tell EEK what you’re building, then shape the world, energy, and plot twists. Wedding or otherwise, the goal is the same: make it feel unmistakably yours.</p><div class="brief"><pre id="briefText">EVENT TYPE: not chosen yet\nWORLD: not chosen yet\nENERGY: not chosen yet\nPLOT TWIST: surprise us\nSTAGE: not chosen yet\nWILD IDEA: tell us everything</pre></div></div>
-          <div class="result-actions"><button class="btn btn-primary" id="emailBrief">Email this brief to EEK ↗</button><button class="btn btn-ghost" id="copyBrief">Copy brief</button></div>
+        <div class="forge-badge">takes ~45 seconds</div>
+      </div>
+
+      <div class="forge-services" id="services" aria-label="Ways to work with EEK">
+        <article class="forge-service-card" data-service="Cleric Castleton"><span>Officiating</span><strong>Cleric Castleton</strong><em>$250</em></article>
+        <article class="forge-service-card" data-service="The One-Shot"><span>Coordination</span><strong>The One-Shot</strong><em>$3,000</em></article>
+        <article class="forge-service-card" data-service="Co-Op Campaign"><span>Partial planning</span><strong>Co-Op Campaign</strong><em>$5,000</em></article>
+        <article class="forge-service-card" data-service="The Wedding Campaign"><span>Full planning</span><strong>The Wedding Campaign</strong><em>$8,000</em></article>
+        <article class="forge-service-card" data-service="Wedding Outfitting"><span>Styling</span><strong>Wedding Outfitting</strong><em>Variable</em></article>
+        <article class="forge-service-card" data-service="Custom Event Campaign"><span>Everything else</span><strong>Custom Event Campaign</strong><em>Custom</em></article>
+      </div>
+      <div class="forge-guide-note"><strong>Not sure which one fits?</strong> Good. That’s what the Forge is for. <span aria-hidden="true">↓</span></div>
+
+      <div class="forge-body">
+        <div class="forge-form guided-forge" id="forgeForm">
+          <div class="forge-progress" aria-label="Vibe Forge progress">
+            <span class="forge-step-count" id="forgeStepCount">1 of 4</span>
+            <div class="forge-progress-track" aria-hidden="true"><i id="forgeProgressBar"></i></div>
+            <span class="forge-progress-note">Choose one to continue</span>
+          </div>
+
+          <div class="forge-step active" data-step="0" data-key="eventType">
+            <div class="step-kicker">Start here</div>
+            <h3>What are we building?</h3>
+            <p class="step-copy">Pick the closest answer. It does not have to fit inside a tidy little box.</p>
+            <div class="choices forge-choice-grid" id="eventTypeChoices">
+              <button type="button" class="chip" data-value="Wedding">Wedding</button>
+              <button type="button" class="chip" data-value="Corporate + Brand">Corporate + Brand</button>
+              <button type="button" class="chip" data-value="Pride + Community">Pride + Community</button>
+              <button type="button" class="chip" data-value="Party + Milestone">Party + Milestone</button>
+              <button type="button" class="chip" data-value="Something Else Entirely">Something Else Entirely</button>
+            </div>
+          </div>
+
+          <div class="forge-step" data-step="1" data-key="setting">
+            <div class="step-kicker">Build the world</div>
+            <h3>Pick your world.</h3>
+            <p class="step-copy">These change based on what you’re building. Choose the one that gets closest to the picture in your head.</p>
+            <div class="choices forge-choice-grid" id="worldChoices"></div>
+          </div>
+
+          <div class="forge-step" data-step="2" data-key="energy">
+            <div class="step-kicker">Set the tone</div>
+            <h3>What’s the energy?</h3>
+            <p class="step-copy">The same room can tell a completely different story depending on the energy.</p>
+            <div class="choices forge-choice-grid" id="energyChoices">
+              <button type="button" class="chip" data-value="Cinematic">Cinematic</button>
+              <button type="button" class="chip" data-value="Cozy chaos">Cozy chaos</button>
+              <button type="button" class="chip" data-value="Dark romance">Dark romance</button>
+              <button type="button" class="chip" data-value="Joyfully loud">Joyfully loud</button>
+              <button type="button" class="chip" data-value="Low-key weird">Low-key weird</button>
+            </div>
+          </div>
+
+          <div class="forge-step" data-step="3" data-key="stage">
+            <div class="step-kicker">Last roll</div>
+            <h3>Where are you in the quest?</h3>
+            <p class="step-copy">This is the part that helps EEK match the world you’re building to the right kind of backup.</p>
+            <div class="choices forge-choice-grid" id="supportChoices"></div>
+            <div class="forge-match-note" id="forgeMatchNote" hidden>Match made. Your campaign is waiting in the readout.</div>
+          </div>
+
+          <div class="forge-nav">
+            <button type="button" class="forge-back" id="forgeBack" disabled>← Back</button>
+            <span id="forgeHint">Choose one to continue</span>
+          </div>
+        </div>
+
+        <aside class="forge-result" id="forgeResult">
+          <div>
+            <div class="result-eyebrow" id="resultEyebrow">Your campaign readout</div>
+            <h3 class="result-title" id="resultTitle">Your Campaign</h3>
+            <p class="result-copy" id="resultCopy">Make four quick choices. EEK will turn them into a readable event brief and recommend the campaign that fits.</p>
+
+            <div class="campaign-readout" aria-live="polite">
+              <div><span>Event</span><strong id="resultEvent">Not chosen yet</strong></div>
+              <div><span>World</span><strong id="resultWorld">Not chosen yet</strong></div>
+              <div><span>Energy</span><strong id="resultEnergy">Not chosen yet</strong></div>
+              <div><span>Backup</span><strong id="resultSupport">Not chosen yet</strong></div>
+            </div>
+
+            <div class="result-match" id="resultMatch" hidden>
+              <span class="match-label">Best fit</span>
+              <div class="match-line"><strong id="matchService"></strong><em id="matchPrice"></em></div>
+              <p id="matchReason"></p>
+            </div>
+            <div class="brief is-visually-hidden"><pre id="briefText"></pre></div>
+          </div>
+          <div class="result-actions" id="resultActions" hidden>
+            <button class="btn btn-primary" id="emailBrief">Send this campaign to EEK ↗</button>
+            <button class="btn btn-ghost" id="copyBrief">Copy campaign</button>
+          </div>
         </aside>
       </div>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="about-photo reveal"><img src="assets/eek-team.png" alt="The EEK Events team"></div>
-    <div class="about-copy reveal"><div class="kicker">Meet your party leader</div><h2>The person who says, “yes, we can do that.”</h2><p>EEK brings event-management rigor, a costume designer’s eye and a genuine love for people whose ideas don’t fit neatly inside the usual event-industry box.</p><p>The goal isn’t to make your event quirky for the sake of quirky. It’s to make it feel so specific to the people in the room that they walk in and immediately think, “of course this is theirs.”</p><div class="about-facts"><div class="fact"><b>People centered + celebrated</b>LGBTQIA+, disabled, genderqueer + nonbinary, neurodivergent, over 50 — and anyone who has ever felt underrepresented by event-industry defaults.</div><div class="fact"><b>Based in New York</b>NYC, Westchester, Hudson Valley, Adirondacks + destination.</div><div class="fact"><b>Special skill</b>Turning “this might be impossible” into a timeline, vendor brief and very possible plan.</div><div class="fact"><b>Design POV</b>Modern editorial structure + fantasy-world detail + zero template energy.</div></div></div>
+  <section class="about-combined" id="about" aria-labelledby="about-title">
+    <div class="about-portrait reveal">
+      <figure class="about-main"><img src="assets/EEK1.jpeg" alt="Portrait of EEK Castleton"></figure>
+      <figure class="about-work"><img src="assets/EEK2.jpeg" alt="EEK Castleton working at a Girl Scouts event table"></figure>
+      <figure class="about-life"><img src="assets/EEK3.jpeg" alt="EEK Castleton and their husband celebrating on the water"></figure>
+    </div>
+    <div class="about-combined-copy reveal">
+      <div class="kicker">Meet your party leader</div>
+      <h2 id="about-title">The producer behind the plot twists.</h2>
+      <p class="about-lede">EEK Castleton is a creative producer with 15 years of event-management experience across weddings, nonprofit organizations and the performing arts — plus a costume designer’s eye and a genuine affection for ideas that do not fit neatly inside the usual event-industry box.</p>
+      <p>The goal is not quirky for quirky’s sake. It is an event so specific to the people in the room that everyone walks in and immediately thinks, <em>“of course this is theirs.”</em></p>
+      <div class="about-facts compact-facts">
+        <div class="fact"><b>Based in New York</b>NYC, Westchester, Hudson Valley, Adirondacks + destination.</div>
+        <div class="fact"><b>15 years of producing</b>Weddings, performing arts, nonprofit, corporate + community.</div>
+        <div class="fact"><b>People centered + celebrated</b>Built for humans routinely left out of event-industry defaults.</div>
+        <div class="fact"><b>Special skill</b>Turning “this might be impossible” into a very possible plan.</div>
+      </div>
+      <details class="about-lore">
+        <summary>Read the full lore <span>+</span></summary>
+        <div class="about-lore-body">
+          <p class="credential">EEK Castleton · M.S. Event Management, NYU Tisch School of Hospitality</p>
+          <p>EEK Castleton is a creative producer with 15 years’ experience in event management for weddings and in the nonprofit and performing arts sectors. They have designed, executed and marketed events ranging from touring circus shows to site-specific performances; large-scale conferences to art exhibitions; and golf tournaments to live-streamed panels, cocktail parties and galas.</p>
+          <p>They have consulted on and worked weddings as intimate as an Adirondack cabin elopement, as exotic as a dance party on a Hawaiian island, as unpretentious as a potluck on a Massachusetts farm, and as Instagram-perfect as a steamboat cruise under the stars.</p>
+          <p>While at Girl Scouts of the USA, EEK led production for the Alum team’s popular Campfire Chat series — 22 live virtual events that drove more than 50,000 registrations. They have worked in close partnership with corporate social responsibility departments to engage participants and meet objectives. During their tenure with Big Apple Circus, EEK produced member and cultivation events in three states.</p>
+          <p>From facilitating intergenerational family reunions for recreation organizations to promoting national tours of NYT Critic’s Pick Off-Broadway circus shows and fireside chats with CEOs of Fortune 500 companies, EEK’s experience in event management and promotions is a juggling act. They use exemplary relationship-building skills to work cross-functionally across the full event cycle, from brainstorming to reporting — collaborating internally with marketing, communications, fund development, legal, finance, the Offices of the Board and CEO, and externally with vendors, speakers, brand partners and consultants.</p>
+        </div>
+      </details>
+    </div>
   </section>
 
   <section class="contact" id="contact">
@@ -853,47 +1113,202 @@ img{display:block;max-width:100%}
   $('#caseNext').addEventListener('click', () => track.scrollBy({left: track.clientWidth*.72, behavior:'smooth'}));
   $('#casePrev').addEventListener('click', () => track.scrollBy({left: -track.clientWidth*.72, behavior:'smooth'}));
 
-  // Vibe Forge
-  const state = {eventType:'',setting:'',energy:'',plot:[],stage:'',idea:''};
-  const recommendations = {
-    'Need a ceremony/officiant':['Cleric Castleton','You have the world. Now you need the words, cues and ceremony structure that make the moment land.'],
-    'Final stretch':['The One-Shot','You did the planning. EEK can step in for the final stretch, wrangle the details and hand you your event day back.'],
-    'Halfway planned':['Co-Op Campaign','You want to keep building — just not alone. Partial planning fills the gaps without taking the story out of your hands.'],
-    'Need the look':['Wedding Outfitting','The visual story is the quest. EEK can help source, tailor or build the look so it feels like you from every angle.'],
-    'Blank page':['The Wedding Campaign','You have a world to build. Full planning gives EEK room to translate the references, the weird details and the logistics into one coherent experience.']
+  // Proof picker — one large image, no second carousel
+  const proofImage = $('#proofImage');
+  const proofCaption = $('#proofCaption');
+  $$('.proof-pick').forEach(btn => btn.addEventListener('click', () => {
+    $$('.proof-pick').forEach(x => x.classList.remove('active'));
+    btn.classList.add('active');
+    if(proofImage){
+      proofImage.classList.add('swapping');
+      setTimeout(() => {
+        proofImage.src = btn.dataset.proofSrc;
+        proofImage.alt = btn.dataset.proofAlt || '';
+        proofCaption.textContent = btn.dataset.proofLabel || '';
+        proofImage.classList.remove('swapping');
+      }, 140);
+    }
+  }));
+
+  // Archive teaser image selector — one clear image at a time
+  const archivePreviewImage = $('#archivePreviewImage');
+  const archivePreviewCaption = $('#archivePreviewCaption');
+  $$('.archive-thumb').forEach(btn => btn.addEventListener('click', () => {
+    $$('.archive-thumb').forEach(x => x.classList.remove('active'));
+    btn.classList.add('active');
+    if(archivePreviewImage){
+      archivePreviewImage.classList.add('swapping');
+      setTimeout(() => {
+        archivePreviewImage.src = btn.dataset.archiveSrc;
+        archivePreviewImage.alt = btn.dataset.archiveAlt || '';
+        if(archivePreviewCaption) archivePreviewCaption.textContent = btn.dataset.archiveLabel || '';
+        archivePreviewImage.classList.remove('swapping');
+      }, 130);
+    }
+  }));
+
+  // Vibe Forge — guided four-step campaign matcher
+  const forgeState = {eventType:'', setting:'', energy:'', stage:''};
+  let forgeStep = 0;
+
+  const worldOptions = {
+    'Wedding':['Castle + candlelight','Forest + folklore','Industrial + strange','Backyard + intimate','Cosmic + maximalist'],
+    'Corporate + Brand':['Gallery + editorial','Immersive world','Polished + cinematic','Playful + interactive','Unexpected venue'],
+    'Pride + Community':['Joyful + expansive','Protest + pageantry','Community + cozy','Nightlife + neon','Art + activation'],
+    'Party + Milestone':['Dinner + drama','Backyard + intimate','Dance floor + maximalist','Theme turned all the way up','Elegant + strange'],
+    'Something Else Entirely':['Site-specific + surprising','Performance + participatory','Intimate + unusual','Big + theatrical','You tell us']
   };
 
-  $$('.question[data-key]').forEach(q => {
-    const key = q.dataset.key;
-    q.querySelectorAll('.chip').forEach(btn => btn.addEventListener('click', () => {
-      const multi = q.querySelector('.choices').classList.contains('multi');
-      if(multi){
-        btn.classList.toggle('active');
-        state[key] = [...q.querySelectorAll('.chip.active')].map(x => x.textContent.trim());
-      } else {
-        q.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
-        btn.classList.add('active'); state[key] = btn.textContent.trim();
-      }
-      updateForge();
-    }));
-  });
-  $('#wildIdea').addEventListener('input', e => {state.idea=e.target.value.trim(); updateForge();});
+  const weddingSupport = [
+    ['Just the ceremony / officiant','Cleric Castleton'],
+    ['I planned it — run the day','The One-Shot'],
+    ['Help me finish the plan','Co-Op Campaign'],
+    ['Start with me from scratch','The Wedding Campaign'],
+    ['I need the look','Wedding Outfitting']
+  ];
+  const customSupport = [
+    ['Run the day','Custom Event Campaign'],
+    ['Help me shape the plan','Custom Event Campaign'],
+    ['Build it with me from scratch','Custom Event Campaign'],
+    ['I need the visual world','Custom Event Campaign'],
+    ['It’s complicated — in a good way','Custom Event Campaign']
+  ];
 
-  function updateForge(){
-    const isWedding = state.eventType === 'Wedding';
-    const rec = state.eventType && !isWedding
-      ? ['Custom Event Campaign','Corporate gathering, Pride celebration, community event, milestone, launch, party, or something that refuses to fit a dropdown — EEK can build the concept, logistics, vendors, design, and execution around what your event actually needs.']
-      : recommendations[state.stage] || recommendations['Blank page'];
-    $('#resultTitle').textContent = rec[0]; $('#resultCopy').textContent = rec[1];
-    const brief = `EVENT TYPE: ${state.eventType || 'not chosen yet'}\nWORLD: ${state.setting || 'not chosen yet'}\nENERGY: ${state.energy || 'not chosen yet'}\nPLOT TWIST: ${(state.plot && state.plot.length) ? state.plot.join(', ') : 'surprise us'}\nSTAGE: ${state.stage || 'not chosen yet'}\nWILD IDEA: ${state.idea || 'tell us everything'}\n\nEEK MATCH: ${rec[0]}`;
-    $('#briefText').textContent = brief;
+  const serviceDetails = {
+    'Cleric Castleton':{price:'$250',copy:'You have the world. EEK handles the words, cues and ceremony structure so the moment lands without feeling generic.'},
+    'The One-Shot':{price:'$3,000',copy:'You did the planning. EEK steps in for the final stretch, wrangles the details and hands you your wedding day back.'},
+    'Co-Op Campaign':{price:'$5,000',copy:'You want to keep building — just not alone. Partial planning fills the gaps without taking the story out of your hands.'},
+    'The Wedding Campaign':{price:'$8,000',copy:'You have a world to build. Full planning gives EEK room to translate the references, weird details and logistics into one coherent experience.'},
+    'Wedding Outfitting':{price:'Variable',copy:'The visual story is the quest. EEK helps source, tailor or build the look so it feels like you from every angle.'},
+    'Custom Event Campaign':{price:'Custom',copy:'Your event does not belong in a wedding-planning dropdown. EEK shapes the concept, logistics, vendors, design and execution around what the event actually needs.'}
+  };
+
+  const forgeSteps = $$('.forge-step');
+  const worldChoices = $('#worldChoices');
+  const supportChoices = $('#supportChoices');
+
+  function makeChoiceButton(label, value=label, service=''){
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chip';
+    btn.textContent = label;
+    btn.dataset.value = value;
+    if(service) btn.dataset.service = service;
+    return btn;
   }
+
+  function renderWorldChoices(){
+    worldChoices.innerHTML = '';
+    (worldOptions[forgeState.eventType] || worldOptions['Something Else Entirely']).forEach(label => worldChoices.appendChild(makeChoiceButton(label)));
+    bindStepChoices(forgeSteps[1]);
+  }
+
+  function renderSupportChoices(){
+    supportChoices.innerHTML = '';
+    const options = forgeState.eventType === 'Wedding' ? weddingSupport : customSupport;
+    options.forEach(([label,service]) => supportChoices.appendChild(makeChoiceButton(label,label,service)));
+    bindStepChoices(forgeSteps[3]);
+  }
+
+  function bindStepChoices(stepEl){
+    stepEl.querySelectorAll('.chip').forEach(btn => {
+      if(btn.dataset.bound) return;
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        const key = stepEl.dataset.key;
+        stepEl.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+        btn.classList.add('active');
+        forgeState[key] = btn.dataset.value || btn.textContent.trim();
+
+        if(key === 'eventType'){
+          forgeState.setting = '';
+          forgeState.stage = '';
+          renderWorldChoices();
+          renderSupportChoices();
+        }
+
+        updateForgeReadout();
+        if(forgeStep < forgeSteps.length - 1){
+          window.setTimeout(() => goToForgeStep(forgeStep + 1), 230);
+        } else {
+          finishForge(btn.dataset.service || getServiceName());
+        }
+      });
+    });
+  }
+
+  function goToForgeStep(next){
+    forgeStep = Math.max(0, Math.min(next, forgeSteps.length - 1));
+    forgeSteps.forEach((step,i) => step.classList.toggle('active', i === forgeStep));
+    $('#forgeStepCount').textContent = `${forgeStep + 1} of ${forgeSteps.length}`;
+    $('#forgeProgressBar').style.width = `${((forgeStep + 1) / forgeSteps.length) * 100}%`;
+    $('#forgeBack').disabled = forgeStep === 0;
+    $('#forgeHint').textContent = forgeStep === forgeSteps.length - 1 ? 'Choose the closest fit' : 'Choose one to continue';
+  }
+
+  function getServiceName(){
+    if(!forgeState.stage) return '';
+    if(forgeState.eventType !== 'Wedding') return 'Custom Event Campaign';
+    const match = weddingSupport.find(([label]) => label === forgeState.stage);
+    return match ? match[1] : 'The Wedding Campaign';
+  }
+
+  function updateForgeReadout(){
+    $('#resultEvent').textContent = forgeState.eventType || 'Not chosen yet';
+    $('#resultWorld').textContent = forgeState.setting || 'Not chosen yet';
+    $('#resultEnergy').textContent = forgeState.energy || 'Not chosen yet';
+    $('#resultSupport').textContent = forgeState.stage || 'Not chosen yet';
+
+    const selections = [forgeState.eventType, forgeState.setting, forgeState.energy, forgeState.stage].filter(Boolean).length;
+    if(selections < 4){
+      $('#resultEyebrow').textContent = 'Your campaign readout';
+      $('#resultTitle').textContent = selections ? 'Taking shape…' : 'Your Campaign';
+      $('#resultCopy').textContent = selections ? 'Good. Keep going — the Forge is narrowing the world and the kind of backup that fits it.' : 'Make four quick choices. EEK will turn them into a readable event brief and recommend the campaign that fits.';
+      $('#resultMatch').hidden = true;
+      $('#resultActions').hidden = true;
+      $('#forgeMatchNote').hidden = true;
+      $$('.forge-service-card').forEach(card => card.classList.remove('recommended'));
+    }
+  }
+
+  function finishForge(serviceName){
+    const detail = serviceDetails[serviceName] || serviceDetails['Custom Event Campaign'];
+    $('#resultEyebrow').textContent = 'Your best fit';
+    $('#resultTitle').textContent = serviceName;
+    $('#resultCopy').textContent = `${forgeState.eventType} · ${forgeState.setting} · ${forgeState.energy}`;
+    $('#matchService').textContent = serviceName;
+    $('#matchPrice').textContent = detail.price;
+    $('#matchReason').textContent = detail.copy;
+    $('#resultMatch').hidden = false;
+    $('#resultActions').hidden = false;
+    $('#forgeMatchNote').hidden = false;
+
+    $$('.forge-service-card').forEach(card => card.classList.toggle('recommended', card.dataset.service === serviceName));
+
+    const brief = `EVENT: ${forgeState.eventType}\nWORLD: ${forgeState.setting}\nENERGY: ${forgeState.energy}\nBACKUP: ${forgeState.stage}\n\nEEK MATCH: ${serviceName} — ${detail.price}`;
+    $('#briefText').textContent = brief;
+
+    if(window.matchMedia('(max-width: 1000px)').matches){
+      window.setTimeout(() => $('#forgeResult').scrollIntoView({behavior:'smooth',block:'start'}), 260);
+    }
+  }
+
+  forgeSteps.forEach(bindStepChoices);
+  renderWorldChoices();
+  renderSupportChoices();
+  goToForgeStep(0);
+  updateForgeReadout();
+
+  $('#forgeBack').addEventListener('click', () => {
+    if(forgeStep > 0) goToForgeStep(forgeStep - 1);
+  });
+
   $('#copyBrief').addEventListener('click', async () => {
-    try{ await navigator.clipboard.writeText($('#briefText').textContent); $('#copyBrief').textContent='Copied ✓'; setTimeout(()=>$('#copyBrief').textContent='Copy brief',1600); }catch(e){ alert('Select and copy the brief manually.'); }
+    try{ await navigator.clipboard.writeText($('#briefText').textContent); $('#copyBrief').textContent='Copied ✓'; setTimeout(()=>$('#copyBrief').textContent='Copy campaign',1600); }catch(e){ alert('Select and copy the campaign manually.'); }
   });
   $('#emailBrief').addEventListener('click', () => {
     const subject = encodeURIComponent('Event Vibe Forge — new inquiry');
-    const body = encodeURIComponent('Hi EEK!\n\nHere is the event world we started building:\n\n' + $('#briefText').textContent + '\n\nWe would love to talk next steps.');
+    const body = encodeURIComponent('Hi EEK!\n\nHere is the campaign I forged on your site:\n\n' + $('#briefText').textContent + '\n\nI would love to talk next steps.');
     window.location.href = `mailto:eek@eek.events?subject=${subject}&body=${body}`;
   });
 
