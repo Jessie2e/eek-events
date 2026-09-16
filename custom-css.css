@@ -565,3 +565,189 @@ img{display:block;max-width:100%}
     background:none;
   }
 }
+/* =========================================================
+   ARCHIVE — SHOW FULL PHOTO ON HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .archive-event-gallery figure {
+    background: #171815;
+  }
+
+  .archive-event-gallery img {
+    transition:
+      transform 0.35s ease,
+      filter 0.35s ease;
+  }
+
+  .archive-event-gallery figure:hover img {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+/* =========================================================
+   EMILY + CONNOR ARCHIVE — EDITORIAL PHOTO GRID
+========================================================= */
+
+@media (min-width: 721px) {
+
+  .archive-event:first-child .archive-event-gallery {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.45fr)
+      minmax(260px, 0.75fr);
+
+    grid-template-rows: repeat(3, 190px);
+
+    gap: 10px;
+  }
+
+
+  /* First three horizontal images stack on the left */
+.archive-event:first-child
+.archive-event-gallery
+figure:nth-child(1) img {
+  object-position: center 30%;
+}
+
+  .archive-event:first-child .archive-event-gallery figure:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .archive-event:first-child .archive-event-gallery figure:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+
+  /* Groomsman portrait owns the full right side */
+  .archive-event:first-child .archive-event-gallery figure:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1 / 4;
+  }
+
+
+  .archive-event:first-child .archive-event-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 18px;
+  }
+
+  .archive-event:first-child .archive-event-gallery img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+
+  /* Keep more of the vertical composition visible */
+  .archive-event:first-child
+  .archive-event-gallery
+  figure:nth-child(4) img {
+    object-position: center 30%;
+  }
+}
+/* =========================================================
+   EMILY + CONNOR — FINAL EDITORIAL ARCHIVE LAYOUT
+========================================================= */
+
+@media (min-width: 721px) {
+
+  /* Tighten the header just for Emily + Connor */
+  .archive-event:first-child .archive-event-head {
+    display: block;
+
+    margin-bottom: 24px;
+  }
+
+  .archive-event:first-child .archive-event-head h2 {
+    margin-bottom: 12px;
+  }
+
+  .archive-event:first-child .archive-event-head p {
+    max-width: 720px;
+  }
+
+
+  /* Editorial gallery */
+  .archive-event:first-child .archive-event-gallery {
+    display: grid;
+
+    grid-template-columns:
+      repeat(7, minmax(0, 1fr))
+      repeat(5, minmax(0, 1fr));
+
+    grid-template-rows:
+      300px
+      250px;
+
+    gap: 10px;
+  }
+
+
+  /* Large horizontal hero */
+  .archive-event:first-child
+  .archive-event-gallery
+  figure:nth-child(1) {
+    grid-column: 1 / 8;
+    grid-row: 1;
+  }
+
+
+  /* Two smaller horizontals underneath */
+  .archive-event:first-child
+  .archive-event-gallery
+  figure:nth-child(2) {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
+
+  .archive-event:first-child
+  .archive-event-gallery
+  figure:nth-child(3) {
+    grid-column: 4 / 8;
+    grid-row: 2;
+  }
+
+
+  /* Tall groomsman image */
+  .archive-event:first-child
+  .archive-event-gallery
+  figure:nth-child(4) {
+    grid-column: 8 / 13;
+    grid-row: 1 / 3;
+  }
+
+
+  .archive-event:first-child
+  .archive-event-gallery figure {
+    margin: 0;
+
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .archive-event:first-child
+  .archive-event-gallery img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover !important;
+    object-position: center;
+
+    transform: none !important;
+  }
+
+
+  /* Undo the earlier hover experiment */
+  .archive-event:first-child
+  .archive-event-gallery figure:hover img {
+    object-fit: cover !important;
+    transform: none !important;
+  }
+}
