@@ -565,27 +565,7 @@ img{display:block;max-width:100%}
     background:none;
   }
 }
-/* =========================================================
-   ARCHIVE — SHOW FULL PHOTO ON HOVER
-========================================================= */
 
-@media (hover: hover) and (pointer: fine) {
-
-  .archive-event-gallery figure {
-    background: #171815;
-  }
-
-  .archive-event-gallery img {
-    transition:
-      transform 0.35s ease,
-      filter 0.35s ease;
-  }
-
-  .archive-event-gallery figure:hover img {
-    object-fit: contain;
-    object-position: center;
-  }
-}
 /* =========================================================
    EMILY + CONNOR ARCHIVE — EDITORIAL PHOTO GRID
 ========================================================= */
@@ -750,4 +730,33 @@ figure:nth-child(1) img {
     object-fit: cover !important;
     transform: none !important;
   }
+}
+
+/* Remove image hover zoom from archive */
+.archive-event-gallery figure:hover img,
+.archive-event-gallery img:hover {
+  transform: none !important;
+  scale: 1 !important;
+  filter: none !important;
+}
+.archive-event-gallery img {
+  transition: none !important;
+}
+/* =========================================================
+   ARCHIVE IMAGES — NO HOVER EFFECT AT ALL
+========================================================= */
+
+.archive-event-gallery figure,
+.archive-event-gallery figure:hover {
+  background: transparent !important;
+}
+
+.archive-event-gallery img,
+.archive-event-gallery figure:hover img,
+.archive-event-gallery img:hover {
+  object-fit: cover !important;
+  transform: none !important;
+  scale: 1 !important;
+  filter: none !important;
+  transition: none !important;
 }
