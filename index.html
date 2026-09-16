@@ -772,14 +772,22 @@ img{display:block;max-width:100%}
 @media(max-width:1000px){.forge-body{grid-template-columns:1fr}.guided-forge{min-height:470px}.forge-services{scroll-snap-type:x mandatory}.forge-service-card{scroll-snap-align:start}.forge-result{min-height:520px}}
 @media(max-width:720px){.forge-head p{font-size:14px}.forge-guide-note{font-size:10px;line-height:1.5}.forge-services{grid-template-columns:repeat(6,158px)}.forge-service-card{min-width:158px;padding:14px}.forge-service-card strong{font-size:19px}.guided-forge{min-height:430px;padding:28px 20px}.forge-progress{grid-template-columns:auto 1fr;margin-bottom:32px}.forge-progress-note{display:none}.forge-step h3{font-size:clamp(38px,12vw,50px)}.forge-choice-grid{display:grid;grid-template-columns:1fr 1fr}.forge-choice-grid .chip{width:100%;text-align:left;font-size:12px;padding:12px}.forge-nav{padding-top:24px}.campaign-readout{grid-template-columns:1fr}.campaign-readout>div{min-height:58px}.match-line{display:block}.match-line em{display:block;margin-top:8px}}
 
+/* Emily tattoo photo — keep Emily in frame as the proof stage narrows */
+.proof-image img.proof-focus-emily{object-position:78% center}.proof-image img.proof-zoom-out {
+  object-fit: cover;
+  transform: scale(1);
+}
+@media(max-width:1000px){.proof-image img.proof-focus-emily{object-position:81% center}}
+@media(max-width:720px){.proof-image img.proof-focus-emily{object-position:84% center}}
+
 </style>
 </head>
 <body>
 <div class="eek-app" id="top">
   <div class="topbar" aria-hidden="true">
     <div class="marquee">
-      <span>NO BEIGE EVENTS ✦ BIG FEELINGS ✦ WEIRD IDEAS WELCOME ✦ YOUR PEOPLE, YOUR RULES ✦</span>
-      <span>NO BEIGE EVENTS ✦ BIG FEELINGS ✦ WEIRD IDEAS WELCOME ✦ YOUR PEOPLE, YOUR RULES ✦</span>
+      <span>BIG FEELINGS ✦ WEIRD IDEAS WELCOME ✦ YOUR PEOPLE, YOUR RULES ✦</span>
+      <span>BIG FEELINGS ✦ WEIRD IDEAS WELCOME ✦ YOUR PEOPLE, YOUR RULES ✦</span>
     </div>
   </div>
 
@@ -795,7 +803,7 @@ img{display:block;max-width:100%}
     <div class="hero-copy">
       <div class="kicker reveal">Weddings + events for people with a point of view</div>
       <h1 class="reveal">Producing your <em>main character</em> energy.</h1>
-      <p class="hero-sub reveal">For creative, unabashedly geeky humans, teams, and communities who want an event that feels like a world of its own — not a template with your name pasted on top.</p>
+      <p class="hero-sub reveal">For creative, one-of-a-kind humans, teams, and communities who want an event that feels like a world of its own instead of a template with your name pasted on top.</p>
       <div class="hero-actions reveal">
         <a class="btn btn-primary" href="#forge">Forge your event vibe ✦</a>
         <a class="btn btn-ghost" href="archive.html">Enter the archives ↗</a>
@@ -814,8 +822,8 @@ img{display:block;max-width:100%}
     <div class="manifesto-grid">
       <h2 class="reveal">Your event is not a <span>side quest.</span></h2>
       <div class="manifesto-copy">
-        <p class="big-p reveal">EEK exists to make the ideas you were told were “too much,” “too weird,” or “not practical enough” feel completely possible — and completely celebrated.</p>
-        <div class="mission-card reveal"><div class="num">01</div><div><h3>Feel like yourself</h3><p>Relaxed, trusting, encouraged, energized, accepted, magical. No performance of what an event is “supposed” to be.</p></div></div>
+        <p class="big-p reveal">EEK exists to celebrate and execute the ideas you were told were “too much” or “too weird.”</p>
+        <div class="mission-card reveal"><div class="num">01</div><div><h3>Feel like yourself</h3><p>Relaxed, trusting, encouraged, energized, accepted, magical. Drop your shoulders. Let’s party.</p></div></div>
         <div class="mission-card reveal"><div class="num">02</div><div><h3>Build a world</h3><p>We turn references, lore, fashion, family, rituals, fandoms and wild little details into one coherent experience.</p></div></div>
         <div class="mission-card reveal"><div class="num">03</div><div><h3>Protect the plot</h3><p>Your needs, wants, access, identity and boundaries get heard, prioritized and protected — all the way through the final send-off.</p></div></div>
       </div>
@@ -830,13 +838,13 @@ img{display:block;max-width:100%}
       <div class="proof-picks" role="list" aria-label="Choose an event detail to preview">
         <button class="proof-pick active" type="button" data-proof-src="assets/ConnorEmily1.jpeg" data-proof-alt="Emily and Connor wedding detail" data-proof-label="Make the world real"><span>01</span> Make the world real</button>
         <button class="proof-pick" type="button" data-proof-src="assets/knight-wedding.jpg" data-proof-alt="Wedding guest in knight armor with a groom" data-proof-label="Wear the armor"><span>02</span> Wear the armor</button>
-        <button class="proof-pick" type="button" data-proof-src="assets/cake-topper.jpg" data-proof-alt="A playful custom wedding cake topper" data-proof-label="Put lore on the cake"><span>03</span> Put lore on the cake</button>
-        <button class="proof-pick" type="button" data-proof-src="assets/girlscout6.jpg" data-proof-alt="An elaborate girlscout themed boardgame" data-proof-label="Commit to the bit"><span>04</span> Commit to the bit</button>
+        <button class="proof-pick" type="button" data-proof-src="assets/lore-replacement.jpg" data-proof-alt="A fantasy-inspired wedding cake with whimsical storybook details" data-proof-label="Put lore on the cake"><span>03</span> Put lore on the cake</button>
+        <button class="proof-pick" type="button" data-proof-src="assets/committobit.jpg" data-proof-alt="A fully themed display built from board games and florals" data-proof-label="Commit to the bit"><span>04</span> Commit to the bit</button>
         <button class="proof-pick" type="button" data-proof-type="video" data-proof-src="assets/EEK.mp4" data-proof-alt="A playful behind-the-scenes moment with the owner of EEK Events" data-proof-label="Make an entrance"><span>05</span> Make an entrance</button>
       </div>
     </div>
     <figure class="proof-image reveal">
-      <img id="proofImage" src="assets/ConnorEmily1.jpeg" alt="Emily and Connor wedding detail">
+      <img id="proofImage" class="proof-focus-emily" src="assets/ConnorEmily1.jpeg" alt="Emily and Connor wedding detail">
       <video id="proofVideo" muted loop playsinline preload="metadata" poster="assets/EEK-poster.jpg" aria-label="A playful behind-the-scenes moment with the owner of EEK Events" hidden>
         <source src="assets/EEK.mp4" type="video/mp4">
       </video>
@@ -849,17 +857,15 @@ img{display:block;max-width:100%}
     <div class="case-track" id="caseTrack">
       <article class="case">
         <div class="case-bg"><img src="assets/ConnorEmily2.jpeg" alt="Emily and Connor celebrating at their wedding"></div>
-        <div class="case-no">Case file 01</div>
         <div class="case-copy">
           <h3>Emily + Connor</h3>
-          <p>A celebration with theatrical flourishes, highly personal details and plenty of main-character energy.</p>
+          <p>When two theatrical production professionals wed, the creativity has no limit.</p>
           <div class="case-tag">↳ Wedding</div>
         </div>
       </article>
 
       <article class="case">
         <div class="case-bg"><img src="assets/girlscout1.jpeg" alt="Guests at a Girl Scout Network event"></div>
-        <div class="case-no">Case file 02</div>
         <div class="case-copy">
           <h3>The Girl Scout Network</h3>
           <p>Community-building events and the Campfire Chat series, produced to engage alum audiences at scale.</p>
@@ -870,7 +876,6 @@ img{display:block;max-width:100%}
 
       <article class="case">
         <div class="case-bg"><img src="assets/sarastefan1.jpeg" alt="Sara and Stefan celebrating at their wedding with a knight in armor"></div>
-        <div class="case-no">Case file 03</div>
         <div class="case-copy">
           <h3>Sara + Stefan</h3>
           <p>Bold color, playful medieval details and a celebration that fully committed to its own world.</p>
@@ -880,7 +885,6 @@ img{display:block;max-width:100%}
 
       <article class="case">
         <div class="case-bg"><img src="assets/CorpPride.jpg" alt="Corporate Pride event produced by EEK Events"></div>
-        <div class="case-no">Case file 04</div>
         <div class="case-copy">
           <h3>Corporate Pride</h3>
           <p>A Pride celebration built with the same intentional design, logistics and unmistakable EEK energy.</p>
@@ -890,7 +894,6 @@ img{display:block;max-width:100%}
 
       <article class="case">
         <div class="case-bg"><img src="assets/MikeSarah1.jpg" alt="Sarah and Mike at their wedding"></div>
-        <div class="case-no">Case file 05</div>
         <div class="case-copy">
           <h3>Sarah + Mike</h3>
           <p>Color, character, layered details and a room full of people completely in on the story.</p>
@@ -898,7 +901,7 @@ img{display:block;max-width:100%}
         </div>
       </article>
     </div>
-    <div class="case-nav"><button id="casePrev" aria-label="Previous event">←</button><button id="caseNext" aria-label="Next event">→</button><a class="case-archive-link" href="archive.html">Explore the full archive ↗</a></div>
+    <div class="case-nav"><button id="casePrev" aria-label="Previous event">←</button><button id="caseNext" aria-label="Next event">→</button><a class="case-archive-link" href="archive.html">Explore Highlighted Events ↗</a></div>
   </section>
 
 
@@ -1146,6 +1149,8 @@ img{display:block;max-width:100%}
         if(proofImage){
           proofImage.src = btn.dataset.proofSrc;
           proofImage.alt = btn.dataset.proofAlt || '';
+          proofImage.classList.toggle('proof-focus-emily', (btn.dataset.proofSrc || '').includes('ConnorEmily1.jpeg'));
+          proofImage.classList.toggle('proof-zoom-out', (btn.dataset.proofSrc || '').includes('lore-replacement.jpg'));
           proofImage.hidden = false;
         }
       }
