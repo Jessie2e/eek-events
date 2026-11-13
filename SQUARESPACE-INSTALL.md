@@ -24,7 +24,7 @@ Create a new Squarespace 7.1 page, preferably a blank/full-width page. Add one C
 
 If your plan/setup strips JavaScript from page Code Blocks, use this split install instead:
 - Paste the HTML portion into a Code Block.
-- Put `custom-css.css` in Design → Custom CSS.
+- Put `custom-css.css` in Design → Custom CSS. Load IM Fell English and Manrope in Header Code Injection with `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Manrope:wght@400..800&display=swap">`.
 - Put `footer-js.js` in Settings → Advanced → Code Injection → Footer.
 
 ### 4. Remove Squarespace section padding

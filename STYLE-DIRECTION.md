@@ -15,12 +15,12 @@ The existing identity already has a strong foundation: medieval/editorial type, 
 - Sage — `#ADB0A9` (existing core)
 - Parchment — `#F3F0E7` (new neutral for readable editorial space)
 - Ink — `#12130F` (new near-black)
-- Portal Violet — `#8B7CFF` (new digital/fantasy accent; use sparingly)
+- Portal Violet — `#8B7CFF` (new digital/fantasy accent; use sparingly; the closing inquiry section uses Oxblood)
 - Critical-Hit Acid — `#D7FF70` (new micro-accent for CTAs, dice, hover states)
 
 ## Type
 - Display: **IM Fell English** — preserve the existing EEK character.
-- UI/body: **Space Grotesk** — makes the site feel contemporary and keeps longer copy readable.
+- UI/body: **Manrope** — clean and polished for body copy, navigation, labels and buttons.
 
 ## Visual vocabulary
 Use: oversized type, editorial cropping, circular “portal” lines, thin borders, campaign/case-file language, subtle dice references, scroll-snap storytelling, asymmetrical photo grids, custom microcopy, parchment/ink contrast, and surprising hover states.
@@ -36,7 +36,7 @@ The site should make the right couple think **“oh, they get us”** within fiv
 4. Services — package names become an elegant campaign system.
 5. Vibe Forge — playful lead qualification and concept generator.
 6. Founder/team trust.
-7. Strong direct inquiry CTA.
+7. Strong direct inquiry CTA on Oxblood, with parchment text and an acid accent.
 
 ## Micro-interactions in the prototype
 - Animated top marquee.
